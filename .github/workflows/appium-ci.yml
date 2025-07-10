@@ -31,6 +31,21 @@ jobs:
           appium --log-level error &
           sleep 10
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Create and start emulator
+        run: |
+          echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86"
+          nohup emulator -avd test -no-window -no-audio -no-boot-anim -accel on &
+          adb wait-for-device
+          adb shell input keyevent 82 &
+          sleep 30  # wait for boot
+
+      - name: Download APK
+        run: |
+          wget https://example.com/path/to/ApiDemos-debug.apk -O ApiDemos-debug.apk
+
       - name: Build and run tests
         run: |
           mvn clean install
