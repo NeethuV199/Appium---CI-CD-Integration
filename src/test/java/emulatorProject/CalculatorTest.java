@@ -45,9 +45,12 @@ public class CalculatorTest {
             e.printStackTrace();
         }
     }
-
-    @AfterMethod
-    public void tearDown(org.testng.ITestResult result) {
+    
+    @After
+    public void tearDown() {
+    if (driver != null) {
         driver.quit();
     }
+}
+
 }
