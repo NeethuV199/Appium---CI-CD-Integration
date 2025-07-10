@@ -16,7 +16,7 @@ public class DriverFactory {
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "16.0"); // Match your AVD version
-        caps.setCapability("app", "C:\\ApiDemos-debug.apk");
+        caps.setCapability("app", System.getProperty("user.dir") + "/apps/ApiDemos-debug.apk");
         caps.setCapability("avd", "Medium_Phone"); // Optional: Auto-launch emulator
 
         // For better stability
