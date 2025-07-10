@@ -16,14 +16,14 @@ public class DriverFactory {
         caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformName", "Android");
         caps.setCapability("platformVersion", "16.0"); // Match your AVD version
-        caps.setCapability("app", "\\ApiDemos-debug.apk");
+        caps.setCapability("app", "C:\\ApiDemos-debug.apk");
         caps.setCapability("avd", "Medium_Phone"); // Optional: Auto-launch emulator
 
         // For better stability
         caps.setCapability("appWaitActivity", "*");
         caps.setCapability("appWaitDuration", 60000);
 
-        URL url = new URL("http://127.0.0.1:4723");
+        URL url = new URL("http://127.0.0.1:4723/");
         driver = new AndroidDriver(url, caps);
         System.out.println("Appium device started..");
     }

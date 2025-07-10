@@ -3,6 +3,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +20,7 @@ public class PreferenceFromCodePage {
     }
 
     //Select 'Preferences from code' from hamburger
+    @Step("Select 'Preferences from code' from menu")
     public void selectPreferencesFromCode() {
         MobileElement preferencesFromCode = (MobileElement) new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.elementToBeClickable(MobileBy.AndroidUIAutomator(PreferenceFromCodeLocators.PREFERENCES_FROM_CODE_TEXT_FROM_MENU)));
@@ -27,6 +29,7 @@ public class PreferenceFromCodePage {
     }
 
     //Click on 'Edit Text Preference' menu from hamburger
+    @Step("Click on 'Edit Text Preference' menu")
     public void clickOnEditTextPreference() {
         MobileElement editTextPreferences = (MobileElement) new WebDriverWait(driver, 60)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(PreferenceFromCodeLocators.EDIT_TEXT_PREFERENCES)));
@@ -35,6 +38,7 @@ public class PreferenceFromCodePage {
     }
 
     //Click on 'Enter Your Favorite animal' field
+    @Step("Click on 'Enter Your Favorite animal' field and enter value")
     public void clickOnEnterYourFavoriteAnimalField() {
         MobileElement enterYourFavoriteAnimal = (MobileElement) new WebDriverWait(driver, 30)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(PreferenceFromCodeLocators.ENTER_YOUR_FAVOURITEANIMAL_FIELD)));
@@ -44,6 +48,7 @@ public class PreferenceFromCodePage {
     }
 
     //Click on OK button from 'Enter your favorite animal' popup
+    @Step("Click on OK button in favorite animal popup")
     public void clickOnOKButton() {
         MobileElement okButton = (MobileElement) new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(PreferenceFromCodeLocators.OK_BUTTON)));
@@ -51,7 +56,8 @@ public class PreferenceFromCodePage {
         Allure.addAttachment("Click on OK button", new ByteArrayInputStream(DriverFactory.screenshotUtils(driver, "OKButton")));
     }
 
-    //Toggle 'Switch Preferences'
+    //Click on Switch Preference Toggle Button
+    @Step("Click on Switch Preference Toggle Button")
     public void clikOnSwitchPreferenceToggleButton() {
         MobileElement switchPreference = (MobileElement) new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(PreferenceFromCodeLocators.SWITCHPREFERENCES_TOGGLEBUTTON)));

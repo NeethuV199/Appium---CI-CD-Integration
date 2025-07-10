@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Pause;
@@ -26,6 +27,7 @@ public class TouchPaintPage {
     }
 
     //Scroll down to the page
+    @Step("Scroll down to the Touch Paint section")
     public void scrollToDown() {
         driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(10)"));
@@ -33,6 +35,7 @@ public class TouchPaintPage {
     }
 
     // Click on 'Touch Paint' option under Graphics
+    @Step("Click on 'Touch Paint' option under Graphics")
     public void touchPaint() {
         MobileElement touchPaintOption = (MobileElement) new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.elementToBeClickable(MobileBy.AndroidUIAutomator(ApiDemosLocators.TOUCHPAINT_TEXT_FROM_MENU)));
@@ -41,6 +44,7 @@ public class TouchPaintPage {
     }
 
     //Zoom in the page
+    @Step("Zoom in on the Touch Paint page")
     public void zoomIn() {
         // Get screen dimensions
         Dimension size = driver.manage().window().getSize();
@@ -82,6 +86,8 @@ public class TouchPaintPage {
         Allure.addAttachment("Zoom In", new ByteArrayInputStream(DriverFactory.screenshotUtils(driver, "ZoomIn")));
     }
 
+    //Zoom out the page
+    @Step("Zoom out on the Touch Paint page")
     public void zoomOut() {
         // Get screen dimensions
         Dimension size = driver.manage().window().getSize();
@@ -123,7 +129,8 @@ public class TouchPaintPage {
         Allure.addAttachment("Zoom Out", new ByteArrayInputStream(DriverFactory.screenshotUtils(driver, "ZoomOut")));
     }
 
-    //IntStream.range(0,2).forEach(i -> driver.pressKey(new KeyEvent(AndroidKey.BACK)));
+    //Go back to previous page
+    @Step("Go back {0} page(s) from Touch Paint")
     public void goToBackPage(int times) {
         for (int i = 0; i < times; i++) {
             driver.navigate().back();

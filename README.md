@@ -32,6 +32,7 @@ You’ll also need a mobile application:
 
 # 📂 Project Structure
 
+```
 ApiDemoProject/
 ├── src/ 
 │   ├── main/
@@ -47,12 +48,13 @@ ApiDemoProject/
 │   │   │   │   ├── DriverFactory.java      # Manages WebDriver setup, capabilities, etc.        
 │   ├── test/
 │   │   ├── java/   
-│   │   │   ├──emulatorProject/             # Emulator-specific test suites           
-│   │   │   │   ├──CalculatorTest.java                   
+│   │   │   ├── emulatorProject/            # Emulator-specific test suites           
+│   │   │   │   ├── CalculatorTest.java                   
 ├── pom.xml                                 # Maven config (dependencies/plugins)
 ├── allure-results/                         # Allure raw test data
 ├── .gitignore                              # Git exclusion rules
 ├── README.md                               # Project docs (setup/usage)
+```
 
 # 🚀 How To Install above mentioned prerequisites Tests
 
