@@ -23,13 +23,15 @@ Every time code is pushed or a pull request is created on the `main` branch:
 - Results are visible directly in the Actions tab of the repo
 
 ## 📁 Project Structure
-
+```
 ├── src/test/java 				# Test files
 ├── pom.xml 					# Maven configuration
 ├── .github/workflows/ 			# GitHub Actions workflows
 │ └── appium-ci.yml 			# CI pipeline definition
 ├── testng.xml 					# TestNG suite configuration
-└── README.md 					# Project documentation	
+└── README.md 					# Project documentation
+
+```
 
 ## 🔧 Prerequisites for CI/CD
 
